@@ -1,0 +1,27 @@
+{
+  "name": "score-keeper",
+  "version": "1.0.0",
+  "description": "JS Score Keeper",
+  "author": "Rick Torres",
+  "license": "GPL-2.0",
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all css minify",
+    "css": "npm-run-all css:precompile css:autoprefix",
+    "css:autoprefix": "postcss --use autoprefixer --no-map --replace assets/css/styles.css",
+    "css:precompile": "node-sass --omitSourceMapUrl true --include-path src assets/scss/styles.scss assets/css/styles.css",
+    "watch": "npm run css && onchange \"assets/scss/*.scss\" -- npm-run-all css",
+    "minify": "cleancss -o assets/css/styles.css assets/css/styles.css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "clean-css-cli": "^4.1.10",
+    "node-sass": "4.7.2",
+    "npm-run-all": "4.1.2",
+    "onchange": "3.3.0",
+    "postcss-cli": "5.0.0"
+  },
+  "engines": {
+    "node": "^8.0"
+  }
+}

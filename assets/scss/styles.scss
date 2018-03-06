@@ -1,0 +1,77 @@
+$color-left: #e74c3c;
+$color-right: #3498db;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  overflow-y: visible;
+}
+
+button {
+  background: white;
+  border-style: none;
+  appearance: none;
+}
+
+.main,
+.area {
+	height: 100%;
+	position: relative;
+}
+
+.area {
+	.header,
+	.footer {
+		height: 15vh;
+
+		button {
+			height: 100%;
+		}
+	}
+}
+
+.header {
+  text-align: center;
+}
+
+.footer {
+  align-items: center;
+  clear: both;
+  display: flex;
+  justify-content: center;
+}
+
+.deduct {
+  display: block;
+  flex-grow: 1;
+  font-size: 35px;
+}
+
+.reset {
+  font-size: 20px;
+  width: 100%;
+}
+
+.area-side {
+	height: 70vh;
+  align-items: center;
+  display: flex;
+  float: left;
+  font-size: 80px;
+  justify-content: center;
+  width: 50%;
+
+	&--left {
+		background: $color-left;
+	}
+
+	&--right {
+		background: $color-right;
+	}
+}

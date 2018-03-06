@@ -1,2 +1,1 @@
-# score-keeper
-Simple JS Score Keeping
+# Simple JS Score Keeping
