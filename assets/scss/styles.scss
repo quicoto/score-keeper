@@ -17,6 +17,10 @@ button {
   background: white;
   border-style: none;
   appearance: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .main,
