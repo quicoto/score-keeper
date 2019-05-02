@@ -26,9 +26,9 @@
     _$.reset = _$.app.querySelector(`.${CLASSES.reset}`);
   }
 
-  function _updateScore(scoreLeft, scoreRight) {
-    _$.scoreLeft.innerText = typeof scoreLeft !== "undefined" ? scoreLeft : _$.areaLeft.dataset[VALUES.score];
-    _$.scoreRight.innerText = typeof scoreRight !== "undefined" ? scoreRight : _$.areaRight.dataset[VALUES.score];
+  function _updateScore() {
+    _$.scoreLeft.innerText = _$.areaLeft.dataset[VALUES.score];
+    _$.scoreRight.innerText = _$.areaRight.dataset[VALUES.score];
   }
 
   function _onClickPlus(event) {
@@ -61,7 +61,10 @@
   }
 
   function _onClickReset() {
-    _updateScore(0, 0);
+    _$.areaLeft.dataset[VALUES.score] = 0;
+    _$.areaRight.dataset[VALUES.score] = 0;
+
+    _updateScore();
   }
 
   function _addEventListeners() {
