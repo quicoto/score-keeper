@@ -1,6 +1,10 @@
 $color-left: #e74c3c;
 $color-right: #3498db;
 
+* {
+  user-select: none;
+}
+
 *,
 *:before,
 *:after {
@@ -17,6 +21,10 @@ button {
   background: white;
   border-style: none;
   appearance: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &:focus {
     outline: none;
@@ -63,9 +71,10 @@ button {
 }
 
 .area-side {
-  cursor: pointer;
 	height: 70vh;
   align-items: center;
+  color: white;
+  cursor: pointer;
   display: flex;
   float: left;
   font-size: 80px;
