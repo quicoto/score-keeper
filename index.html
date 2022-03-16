@@ -16,20 +16,25 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="assets/icons/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-
-  <link rel="stylesheet" href="assets/css/normalize.css">
-  <link rel="stylesheet" href="assets/css/styles.css?ver=3.0.0">
+  <link rel="stylesheet" href="assets/css/styles.css?ver=4.0.0">
 </head>
 <body>
   <main id="app" class="main">
       <section class="area">
         <header class="header">
-          <button class="reset">Reset</button>
+          <div>
+            <button class="reset">Reiniciar</button>
+          </div>
+          <div class="total">
+            Total: <span class="total-value" data-score="100"></span>
+          </div>
         </header>
         <div class="area-side area-side--left" data-score="0">
+          <span class="area-side-text">Falta leve</span>
           <span class="score score--left"></span>
         </div>
         <div class="area-side area-side--right" data-score="0">
+          <span class="area-side-text">Falta grave</span>
           <span class="score score--right"></span>
         </div>
         <footer class="footer">
@@ -38,6 +43,6 @@
         </footer>
       </section>
     </main>
-  <script src="assets/js/app.js?ver=3.0.0"></script>
+  <script src="assets/js/main.min.js?ver=4.0.0"></script>
 </body>
 </html>

@@ -6,23 +6,19 @@
   "license": "GPL-2.0",
   "private": true,
   "scripts": {
-    "build": "npm-run-all css minify",
-    "css": "npm-run-all css:precompile css:autoprefix",
-    "css:autoprefix": "postcss --use autoprefixer --no-map --replace assets/css/styles.css",
-    "css:precompile": "node-sass --omitSourceMapUrl true --include-path src assets/scss/styles.scss assets/css/styles.css",
-    "watch": "npm run css && onchange \"assets/scss/*.scss\" -- npm-run-all css",
-    "minify": "cleancss -o assets/css/styles.css assets/css/styles.css"
+    "build": "npm-run-all build*",
+    "build:css": "sass --no-source-map --style=compressed src/styles.scss assets/css/styles.css",
+    "build:js": "esbuild src/main.js --bundle --minify --outfile=assets/js/main.min.js",
+    "watch:js": "esbuild src/main.js --watch --outfile=assets/js/main.min.js",
+    "watch:css": "sass -w src/styles.scss assets/css/styles.css",
+    "lint:js": "eslint src/main.js"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
-    "clean-css-cli": "^5.5.2",
-    "node-sass": "^7.0.1",
+    "esbuild": "^0.14.27",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
     "npm-run-all": "4.1.5",
-    "onchange": "7.1.0",
-    "postcss": "^8.4.6",
-    "postcss-cli": "^9.1.0"
-  },
-  "engines": {
-    "node": "^8.0"
+    "sass": "^1.49.9"
   }
 }
